@@ -2,3 +2,6 @@
 <?php
 phpinfo();
 ?>
+
+/** ?dasdas
+ */
