@@ -5,17 +5,16 @@ use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-// Instantiate app
 $app = AppFactory::create();
 
-// Add Error Handling Middleware
-$app->addErrorMiddleware(true, false, false);
-
-// Add route callbacks
-$app->get('/', function (Request $request, Response $response, array $args) {
-    $response->getBody()->write('Hello World');
+$app->get('/', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("Hello world!");
     return $response;
 });
 
-// Run application
+
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $app->run();
